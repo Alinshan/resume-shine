@@ -132,3 +132,4 @@ export default function Navbar({ theme, setTheme, soundEnabled, setSoundEnabled,
     </header>
   );
 }
+

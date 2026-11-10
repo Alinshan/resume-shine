@@ -54,3 +54,4 @@ export default function DecryptedText({ text, speed = 28, className = '', as = '
     </Component>
   );
 }
+

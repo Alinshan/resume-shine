@@ -116,3 +116,4 @@ export default function Dock({ theme, setTheme, soundEnabled, setSoundEnabled, s
     </nav>
   );
 }
+

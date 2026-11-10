@@ -64,3 +64,4 @@ export const sound = {
   laser: () => playTone(440, 880, 0.05, 0.01, 'triangle'),
   tab: () => playTone(520, 680, 0.02, 0.005),
 };
+
