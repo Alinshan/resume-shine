@@ -726,15 +726,24 @@ button {
 
 .tech-text-name-wrap {
   width: 100%;
-  max-width: 640px;
-  height: 96px;
+  max-width: 660px;
+  height: 98px;
   position: relative;
   margin-bottom: 0.35rem;
+  transition: filter 0.3s ease;
+}
+
+[data-theme="dark"] .tech-text-name-wrap {
+  filter: drop-shadow(0 0 16px rgba(192, 132, 252, 0.35)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8));
+}
+
+[data-theme="light"] .tech-text-name-wrap {
+  filter: drop-shadow(0 2px 8px rgba(124, 58, 237, 0.14));
 }
 
 @media (max-width: 640px) {
   .tech-text-name-wrap {
-    height: 68px;
+    height: 70px;
   }
 }
 

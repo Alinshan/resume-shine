@@ -18,7 +18,7 @@ import {
   Sparkles,
 } from 'lucide-react';
 
-export default function Home({ showToast }) {
+export default function Home({ theme = 'dark', showToast }) {
   const handleCopy = (text, label) => {
     navigator.clipboard?.writeText(text);
     sound.chime();
@@ -80,23 +80,23 @@ export default function Home({ showToast }) {
                 text="SHINE B JOHN"
                 fontFamily="'Space Grotesk', ui-monospace, sans-serif"
                 fontWeight={800}
-                fontSize={72}
-                letterSpacing={-0.03}
+                fontSize={76}
+                letterSpacing={-0.02}
                 align="left"
                 reveal="letter"
                 dashLength={4}
                 dashGap={2}
-                specks={15}
+                specks={18}
                 intro="none"
                 introDuration={1.5}
                 clickKick
                 draggable
                 bounce={0.4}
                 sweep
-                speed={1}
+                speed={1.2}
                 guides={false}
-                color="var(--text-primary)"
-                accentColor="var(--purple-accent)"
+                color={theme === 'dark' ? '#FFFFFF' : '#0F172A'}
+                accentColor={theme === 'dark' ? '#C084FC' : '#7C3AED'}
               />
             </div>
             <div className="candidate-role">

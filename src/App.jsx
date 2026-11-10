@@ -86,13 +86,13 @@ function MainLayout() {
 
       <main className="main-content">
         <Routes>
-          <Route path="/" element={<Home showToast={showToast} />} />
+          <Route path="/" element={<Home theme={theme} showToast={showToast} />} />
           <Route path="/about" element={<About showToast={showToast} />} />
           <Route path="/experience" element={<Experience showToast={showToast} />} />
           <Route path="/projects" element={<Projects showToast={showToast} />} />
           <Route path="/skills" element={<Skills showToast={showToast} />} />
           <Route path="/terminal" element={<TerminalLab showToast={showToast} />} />
-          <Route path="*" element={<Home showToast={showToast} />} />
+          <Route path="*" element={<Home theme={theme} showToast={showToast} />} />
         </Routes>
       </main>
 

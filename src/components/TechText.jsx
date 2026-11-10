@@ -149,10 +149,26 @@ const TechText = ({
     const family = s => s.fontFamily || getComputedStyle(container).fontFamily || 'sans-serif';
     const fontFor = (s, size) => `${s.fontWeight} ${size}px ${family(s)}`;
 
+    const resolveColor = (value, fallback) => {
+      if (!value || INHERIT.test(String(value).trim())) return fallback;
+      const str = String(value).trim();
+      if (str.startsWith('var(')) {
+        const match = str.match(/var\(\s*([^,\s)]+)/);
+        if (match) {
+          const resolved = getComputedStyle(document.documentElement).getPropertyValue(match[1]).trim();
+          if (resolved) return resolved;
+        }
+        return fallback;
+      }
+      return str;
+    };
+
     const palette = s => {
-      const current = getComputedStyle(container).color || '#000000';
-      const pick = value => (!value || INHERIT.test(String(value).trim()) ? current : value);
-      return { ink: pick(s.color), accent: pick(s.accentColor) };
+      const current = getComputedStyle(container).color || '#ffffff';
+      return {
+        ink: resolveColor(s.color, current),
+        accent: resolveColor(s.accentColor, '#c084fc')
+      };
     };
 
     const setFont = (target, s, size) => {
@@ -997,3 +1013,4 @@ const TechText = ({
 };
 
 export default TechText;
+
