@@ -712,6 +712,32 @@ button {
   flex: 1;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.tech-text-name-wrap {
+  width: 100%;
+  max-width: 640px;
+  height: 96px;
+  position: relative;
+  margin-bottom: 0.35rem;
+}
+
+@media (max-width: 640px) {
+  .tech-text-name-wrap {
+    height: 68px;
+  }
+}
+
 .candidate-name {
   font-family: 'Space Grotesk', ui-monospace, monospace;
   font-size: 2.4rem;

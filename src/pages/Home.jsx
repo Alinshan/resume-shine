@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import TechText from '../components/TechText';
 import DecryptedText from '../components/DecryptedText';
 import TiltedCard from '../components/TiltedCard';
 import { sound } from '../utils/sound';
@@ -73,9 +74,31 @@ export default function Home({ showToast }) {
       <section className="hero-card border-beam-card tilted-card animate-enter">
         <div className="hero-main-row">
           <div className="name-title-box">
-            <h1 className="candidate-name">
-              <DecryptedText text="SHINE B JOHN" speed={28} />
-            </h1>
+            <h1 className="sr-only">SHINE B JOHN</h1>
+            <div className="tech-text-name-wrap">
+              <TechText
+                text="SHINE B JOHN"
+                fontFamily="'Space Grotesk', ui-monospace, sans-serif"
+                fontWeight={800}
+                fontSize={72}
+                letterSpacing={-0.03}
+                align="left"
+                reveal="letter"
+                dashLength={4}
+                dashGap={2}
+                specks={15}
+                intro="none"
+                introDuration={1.5}
+                clickKick
+                draggable
+                bounce={0.4}
+                sweep
+                speed={1}
+                guides={false}
+                color="var(--text-primary)"
+                accentColor="var(--purple-accent)"
+              />
+            </div>
             <div className="candidate-role">
               Cybersecurity Researcher &bull; SOC Analyst &amp; Penetration Tester
             </div>
